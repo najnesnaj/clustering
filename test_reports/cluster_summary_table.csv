@@ -1,0 +1,4 @@
+Cluster ID,Label,Size,Percentage,Avg Volatility,Avg Return,Fluctuation Count,Sharpe Ratio,Max Drawdown,Sample Symbols
+0,Small - Low Volatility - Stable Stocks - Low Fluctuation,3,60.0%,0.000,0.0000,0.0,0.000,0.000,"AAPL, AMZN, MSFT"
+1,Small - Low Volatility - Stable Stocks - Low Fluctuation,1,20.0%,0.000,0.0000,0.0,0.000,0.000,GOOGL
+2,Small - Low Volatility - Stable Stocks - Low Fluctuation,1,20.0%,0.000,0.0000,0.0,0.000,0.000,TSLA

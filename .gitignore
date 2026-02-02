@@ -172,6 +172,18 @@ results/*.csv
 *.log
 clustering_analysis.log
 
+# Docker demo specific - Large files that shouldn't be in git
+*.db
+*.sqlite
+*.sqlite3
+docker-demo/
+*.tar
+*.tar.gz
+data/cache/
+demo_data/
+cache/
+*.pkl
+
 # Database credentials
 config.py
 .env.local

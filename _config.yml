@@ -1,0 +1,78 @@
+# Site settings
+title: Stock Clustering Project
+description: Interactive stock clustering analysis and visualization
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: jekyll-theme-primer
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-github-metadata
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - test_env/
+  - venv/
+  - __pycache__/
+  - .git/
+  - .github/
+  - "*.py"
+  - "*.csv"
+  - requirements.txt
+  - Dockerfile
+  - "*.md"
+  - demo_reports/
+  - test_cache/
+  - test_reports/
+
+# Include specific files
+include:
+  - _pages
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# GitHub metadata settings
+github:
+  repository_name: clustering
+  repository_url: https://github.com/najmus-saqib/clustering
+
+# SEO settings
+logo: "/assets/logo.png"
+twitter:
+  username: najmus_saquib
+social:
+  name: Najmus Saqib
+  links:
+    - https://github.com/najmus-saqib
+
+# Analytics (if needed)
+google_analytics: ""

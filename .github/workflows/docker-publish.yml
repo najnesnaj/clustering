@@ -1,0 +1,39 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*.*.*' ]          # Optional: also trigger on version tags
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write           # Required for pushing to GHCR
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}   # Built-in, secure token
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6   # Latest version as of 2026
+        with:
+          context: .
+          file: ./Dockerfile                 # or path/to/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}   # Don't push on PRs
+          tags: |
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/${{ github.repository }}:${{ github.ref_name }}   # e.g., main or v1.2.3
+          labels: |
+            org.opencontainers.image.source=${{ github.repositoryUrl }}

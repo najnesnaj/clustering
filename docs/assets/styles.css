@@ -1,0 +1,23 @@
+.md-content {
+    max-width: 80em;
+}
+
+.md-typeset .admonition {
+    border-left: 4px solid #2196f3;
+}
+
+.md-typeset .admonition.tip {
+    border-left-color: #4caf50;
+}
+
+.md-typeset .admonition.info {
+    border-left-color: #2196f3;
+}
+
+.md-typeset h1 {
+    color: #1976d2;
+}
+
+.md-typeset h2 {
+    color: #2196f3;
+}

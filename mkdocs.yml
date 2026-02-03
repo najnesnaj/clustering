@@ -1,0 +1,65 @@
+site_name: "opencode applied"
+site_description: "Comprehensive documentation for the Stock Clustering Analysis project"
+site_author: "Najmus Saqib"
+repo_url: https://github.com/najmus-saqib/clustering
+edit_uri: edit/main/docs/
+
+# GitHub Pages deployment
+remote_branch: gh-pages
+remote_name: origin
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: blue
+      accent: light blue
+    - scheme: slate
+      primary: blue
+      accent: light blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - search
+
+extra_css:
+  - assets/styles.css
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Project Overview:
+      - Introduction: overview/project-intro.md
+      - Docker Demo: overview/docker-demo.md
+  - Planning & Development:
+      - Initial Plan: planning/initial-plan.md
+      - Docker Planning: planning/docker-plan.md
+      - Setup Documentation: planning/setup-docs.md
+      - Implementation Complete: planning/implementation.md
+  - Deployment & Usage:
+      - Docker Deployment: guides/docker-deployment.md
+      - Database Setup: guides/database-setup.md
+      - Notebook Compatibility: guides/notebooks.md
+      - Demo Results: guides/demo-results.md

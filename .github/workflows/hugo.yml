@@ -43,15 +43,17 @@ jobs:
         with:
           ruby-version: '3.2'
           
-      - name: Install Jekyll and dependencies
-        run: |
-          gem install jekyll jekyll-theme-primer jekyll-seo-tag jekyll-sitemap
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
           
       - name: Build with Jekyll
         env:
           JEKYLL_ENV: production
         run: |
-          jekyll build \
+          bundle exec jekyll build \
             --baseurl "${{ steps.pages.outputs.base_url }}" \
             --destination ./public
       - name: Upload artifact

@@ -46,7 +46,7 @@ docs/
 site_name: "opencode applied"
 site_description: "Comprehensive documentation for the Stock Clustering Analysis project"
 site_author: "Najmus Saqib"
-repo_url: https://github.com/najmus-saqib/clustering
+repo_url: https://github.com/najnesnaj/clustering
 edit_uri: edit/main/docs/
 
 # GitHub Pages deployment

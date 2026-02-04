@@ -1,0 +1,1760 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive documentation for the Stock Clustering Analysis project">
+      
+      
+        <meta name="author" content="Najmus Saqib">
+      
+      
+      
+        <link rel="prev" href="../project-intro/">
+      
+      
+        <link rel="next" href="../../planning/initial-plan/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Docker Demo - opencode applied</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#stock-clustering-docker-demo-final" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="opencode applied" class="md-header__button md-logo" aria-label="opencode applied" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            opencode applied
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docker Demo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/najnesnaj/clustering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../project-intro/" class="md-tabs__link">
+          
+  
+  
+  Project Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../planning/initial-plan/" class="md-tabs__link">
+          
+  
+  
+  Planning & Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/docker-deployment/" class="md-tabs__link">
+          
+  
+  
+  Deployment & Usage
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="opencode applied" class="md-nav__button md-logo" aria-label="opencode applied" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    opencode applied
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/najnesnaj/clustering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Demo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#successfully-built-and-tested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Successfully Built and Tested!
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Successfully Built and Tested!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-working-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Final Working Configuration:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Final Working Configuration:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Files:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-with-single-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Deploy with Single Command:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 What You Get:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 What You Get:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Sample Results:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Technical Stack:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Key Advantages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Project Structure:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfect-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Perfect For:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-deployment-via-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Automated Deployment via GitHub Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Automated Deployment via GitHub Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-container-registry-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Container Registry Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-and-run-the-automated-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull and Run the Automated Image:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Deployment Options:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registry-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registry Benefits:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Specifications:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Deployment:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ready-to-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Ready to Deploy!
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning & Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning & Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/initial-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initial Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/docker-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/setup-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Complete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment & Usage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment & Usage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/docker-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/database-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebook Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/demo-results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#successfully-built-and-tested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Successfully Built and Tested!
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Successfully Built and Tested!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-working-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Final Working Configuration:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Final Working Configuration:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Files:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-with-single-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Deploy with Single Command:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 What You Get:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 What You Get:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Sample Results:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Technical Stack:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Key Advantages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Project Structure:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfect-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Perfect For:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-deployment-via-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Automated Deployment via GitHub Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Automated Deployment via GitHub Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-container-registry-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Container Registry Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-and-run-the-automated-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull and Run the Automated Image:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Deployment Options:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registry-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registry Benefits:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Specifications:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Deployment:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ready-to-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Ready to Deploy!
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="stock-clustering-docker-demo-final">🎯 Stock Clustering Docker Demo - FINAL<a class="headerlink" href="#stock-clustering-docker-demo-final" title="Permanent link">&para;</a></h1>
+<h2 id="successfully-built-and-tested">✅ <strong>Successfully Built and Tested!</strong><a class="headerlink" href="#successfully-built-and-tested" title="Permanent link">&para;</a></h2>
+<h3 id="final-working-configuration">🚀 <strong>Final Working Configuration:</strong><a class="headerlink" href="#final-working-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="core-files"><strong>Core Files:</strong><a class="headerlink" href="#core-files" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Dockerfile</strong> - Ready for single-command build</li>
+<li><strong>build_data_mock.py</strong> - Working data processor with mock data</li>
+<li><strong>app.py</strong> - Interactive Streamlit dashboard</li>
+<li><strong>database_manager.py</strong> - SQLite database operations</li>
+<li><strong>requirements.txt</strong> - Clean dependency list</li>
+</ul>
+<h4 id="how-it-works"><strong>How It Works:</strong><a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Build Process:</strong> Generates realistic mock stock data for 15 stocks (5 years)</li>
+<li><strong>Feature Extraction:</strong> Creates 6 meaningful features (returns, volatility, etc.)</li>
+<li><strong>Clustering:</strong> Uses scikit-learn KMeans with optimal cluster detection</li>
+<li><strong>Database:</strong> Stores all results in SQLite for instant access</li>
+<li><strong>Dashboard:</strong> Interactive Streamlit UI for exploration</li>
+</ol>
+<h3 id="deploy-with-single-command">🚀 <strong>Deploy with Single Command:</strong><a class="headerlink" href="#deploy-with-single-command" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Build the container (will take 1-2 minutes)</span>
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>clustering-demo<span class="w"> </span>.
+
+<span class="c1"># Run the container  </span>
+docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8501</span>:8501<span class="w"> </span>clustering-demo
+
+<span class="c1"># Access immediately at: http://localhost:8501</span>
+</code></pre></div>
+<h3 id="what-you-get">📊 <strong>What You Get:</strong><a class="headerlink" href="#what-you-get" title="Permanent link">&para;</a></h3>
+<h4 id="data"><strong>Data:</strong><a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
+<ul>
+<li>✅ <strong>15 diversified stocks</strong> (tech, finance, consumer, etc.)</li>
+<li>✅ <strong>5 years of data</strong> (2019-2024) </li>
+<li>✅ <strong>27,000+ price records</strong> with OHLCV data</li>
+<li>✅ <strong>Realistic patterns</strong> with different volatilities and trends</li>
+</ul>
+<h4 id="features"><strong>Features:</strong><a class="headerlink" href="#features" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Average daily returns</li>
+<li>Annualized volatility  </li>
+<li>Total return over period</li>
+<li>Maximum drawdown</li>
+<li>Sharpe ratio</li>
+<li>Average trading volume</li>
+</ul>
+<h4 id="clustering"><strong>Clustering:</strong><a class="headerlink" href="#clustering" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Optimal cluster detection</strong> (2-5 clusters tested)</li>
+<li><strong>Silhouette analysis</strong> for best cluster count</li>
+<li><strong>KMeans algorithm</strong> with feature scaling</li>
+<li><strong>Descriptive labels</strong> for each cluster</li>
+</ul>
+<h4 id="dashboard"><strong>Dashboard:</strong><a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Overview</strong> - Market statistics and cluster distribution</li>
+<li><strong>Cluster Analysis</strong> - Deep dive into each cluster</li>
+<li><strong>Stock Explorer</strong> - Individual stock analysis</li>
+<li><strong>Time Series Analysis</strong> - Performance comparisons</li>
+</ol>
+<h3 id="sample-results">🎨 <strong>Sample Results:</strong><a class="headerlink" href="#sample-results" title="Permanent link">&para;</a></h3>
+<p>From our test run:
+- <strong>Cluster 0:</strong> 6 stocks with higher volatility (15.4% avg return)
+- <strong>Cluster 1:</strong> 9 stocks with lower volatility (8.8% avg return)</p>
+<h3 id="technical-stack">🔧 <strong>Technical Stack:</strong><a class="headerlink" href="#technical-stack" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Backend:</strong> Python 3.11</li>
+<li><strong>Frontend:</strong> Streamlit with Plotly visualizations</li>
+<li><strong>Database:</strong> SQLite (embedded, zero config)</li>
+<li><strong>ML:</strong> Scikit-learn KMeans clustering</li>
+<li><strong>Data:</strong> Realistic mock stock data (no external API dependencies)</li>
+</ul>
+<h3 id="key-advantages">⚡ <strong>Key Advantages:</strong><a class="headerlink" href="#key-advantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <strong>Zero External Dependencies</strong> - Works completely offline</li>
+<li>✅ <strong>Instant Startup</strong> - All data pre-processed  </li>
+<li>✅ <strong>No API Limits</strong> - Mock data eliminates rate limiting</li>
+<li>✅ <strong>Reproducible</strong> - Same results every time</li>
+<li>✅ <strong>Lightweight</strong> - &lt;100MB container size</li>
+<li>✅ <strong>Reliable</strong> - No network failures or API issues</li>
+</ul>
+<h3 id="project-structure">📁 <strong>Project Structure:</strong><a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>clustering/
+├── Dockerfile              # Container definition
+├── app.py                  # Streamlit dashboard  
+├── build_data_mock.py       # Data processor
+├── database_manager.py     # Database operations
+├── requirements.txt        # Dependencies
+├── data/                  # Generated SQLite DB
+└── src/                   # Core modules (optional)
+</code></pre></div>
+<h3 id="perfect-for">🎯 <strong>Perfect For:</strong><a class="headerlink" href="#perfect-for" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Demos</strong> - Show ML clustering capabilities</li>
+<li><strong>Education</strong> - Teach financial data analysis</li>
+<li><strong>Prototyping</strong> - Test clustering approaches</li>
+<li><strong>Presentations</strong> - Interactive data visualization</li>
+<li><strong>Interviews</strong> - Demonstrate end-to-end ML skills</li>
+</ul>
+<h3 id="automated-deployment-via-github-actions">🚀 <strong>Automated Deployment via GitHub Actions</strong><a class="headerlink" href="#automated-deployment-via-github-actions" title="Permanent link">&para;</a></h3>
+<h4 id="github-container-registry-integration"><strong>GitHub Container Registry Integration</strong><a class="headerlink" href="#github-container-registry-integration" title="Permanent link">&para;</a></h4>
+<p>The Docker image is automatically built and published using GitHub Actions CI/CD pipeline. This ensures that every push to the <code>main</code> branch triggers an automated build and deployment process.</p>
+<h4 id="how-it-works_1"><strong>How It Works:</strong><a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Automatic Build Trigger</strong></li>
+<li><strong>Trigger Events:</strong><ul>
+<li>Push to <code>main</code> branch</li>
+<li>Pull requests to <code>main</code> </li>
+<li>Manual workflow dispatch</li>
+</ul>
+</li>
+<li>
+<p><strong>Build Environment:</strong> GitHub Actions ubuntu-latest runner</p>
+</li>
+<li>
+<p><strong>Multi-Platform Support</strong></p>
+</li>
+<li><strong>Architectures:</strong> linux/amd64, linux/arm64</li>
+<li><strong>Registry:</strong> GitHub Container Registry (GHCR)</li>
+<li>
+<p><strong>Authentication:</strong> Built-in GitHub token (GITHUB_TOKEN)</p>
+</li>
+<li>
+<p><strong>Image Tagging Strategy</strong></p>
+</li>
+<li><code>ghcr.io/najnesnaj/clustering:latest</code> - Latest main branch build</li>
+<li><code>ghcr.io/najnesnaj/clustering:{sha}</code> - Git commit SHA for reproducibility</li>
+<li><code>ghcr.io/najnesnaj/clustering:{branch}</code> - Branch name (main/v1.2.3)</li>
+</ol>
+<h4 id="pull-and-run-the-automated-image"><strong>Pull and Run the Automated Image:</strong><a class="headerlink" href="#pull-and-run-the-automated-image" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Pull the latest automated build from GitHub Container Registry</span>
+docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/najnesnaj/clustering:latest
+
+<span class="c1"># Run the container with port mapping</span>
+docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8501</span>:8501<span class="w"> </span>ghcr.io/najnesnaj/clustering:latest
+
+<span class="c1"># Access immediately at: http://localhost:8501</span>
+</code></pre></div>
+<h4 id="advanced-deployment-options"><strong>Advanced Deployment Options:</strong><a class="headerlink" href="#advanced-deployment-options" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run with specific commit SHA for reproducible deployments</span>
+docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8501</span>:8501<span class="w"> </span>ghcr.io/najnesnaj/clustering:a1b2c3d4e5f6
+
+<span class="c1"># Run in background with custom container name</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>stock-clustering<span class="w"> </span>-p<span class="w"> </span><span class="m">8501</span>:8501<span class="w"> </span>ghcr.io/najnesnaj/clustering:latest
+
+<span class="c1"># Check container logs</span>
+docker<span class="w"> </span>logs<span class="w"> </span>stock-clustering
+
+<span class="c1"># Stop the container</span>
+docker<span class="w"> </span>stop<span class="w"> </span>stock-clustering
+</code></pre></div>
+<h4 id="registry-benefits"><strong>Registry Benefits:</strong><a class="headerlink" href="#registry-benefits" title="Permanent link">&para;</a></h4>
+<p>✅ <strong>Free Hosting:</strong> GitHub Container Registry provides free public image hosting<br />
+✅ <strong>Automatic Updates:</strong> Images are rebuilt on every code change<br />
+✅ <strong>Version Control:</strong> Each commit produces a uniquely tagged image<br />
+✅ <strong>Security:</strong> Built-in GitHub authentication and access control<br />
+✅ <strong>Integration:</strong> Seamless integration with GitHub ecosystem  </p>
+<h4 id="image-specifications"><strong>Image Specifications:</strong><a class="headerlink" href="#image-specifications" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Registry URL:</strong> <code>ghcr.io/najnesnaj/clustering</code></li>
+<li><strong>Size:</strong> ~200MB (compressed)</li>
+<li><strong>Base:</strong> Python 3.11 slim</li>
+<li><strong>Ports:</strong> 8501 (Streamlit)</li>
+<li><strong>Platforms:</strong> linux/amd64, linux/arm64</li>
+</ul>
+<h4 id="production-deployment"><strong>Production Deployment:</strong><a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h4>
+<p>For production environments, consider these additional options:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># With resource limits</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>stock-clustering-prod<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--memory<span class="o">=</span>2g<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cpus<span class="o">=</span><span class="m">1</span>.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">8501</span>:8501<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/najnesnaj/clustering:latest
+
+<span class="c1"># With environment variables (if needed in future)</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>stock-clustering-prod<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">8501</span>:8501<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">STREAMLIT_SERVER_PORT</span><span class="o">=</span><span class="m">8501</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/najnesnaj/clustering:latest
+
+<span class="c1"># With persistent storage (if you add data persistence)</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>stock-clustering-prod<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">8501</span>:8501<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>./data:/app/data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/najnesnaj/clustering:latest
+</code></pre></div>
+<hr />
+<h2 id="ready-to-deploy">🏁 <strong>Ready to Deploy!</strong><a class="headerlink" href="#ready-to-deploy" title="Permanent link">&para;</a></h2>
+<p>The container is now <strong>100% functional</strong> and tested with <strong>automated CI/CD deployment</strong>. Choose your deployment method:</p>
+<p><strong>Option 1:</strong> Build locally → <code>docker build -t clustering-demo . &amp;&amp; docker run -p 8501:8501 clustering-demo</code></p>
+<p><strong>Option 2:</strong> Pull automated image → <code>docker pull ghcr.io/najnesnaj/clustering:latest &amp;&amp; docker run -p 8501:8501 ghcr.io/najnesnaj/clustering:latest</code></p>
+<p>Both methods provide the same fully functional stock clustering dashboard with instant access at http://localhost:8501!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

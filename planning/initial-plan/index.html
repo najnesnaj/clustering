@@ -1,0 +1,2454 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive documentation for the Stock Clustering Analysis project">
+      
+      
+        <meta name="author" content="Najmus Saqib">
+      
+      
+      
+        <link rel="prev" href="../../overview/docker-demo/">
+      
+      
+        <link rel="next" href="../docker-plan/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Initial Plan - opencode applied</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#stock-clustering-project-planning-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="opencode applied" class="md-header__button md-logo" aria-label="opencode applied" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            opencode applied
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Initial Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/najnesnaj/clustering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../overview/project-intro/" class="md-tabs__link">
+          
+  
+  
+  Project Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Planning & Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/docker-deployment/" class="md-tabs__link">
+          
+  
+  
+  Deployment & Usage
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="opencode applied" class="md-nav__button md-logo" aria-label="opencode applied" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    opencode applied
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/najnesnaj/clustering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/project-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/docker-demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning & Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning & Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initial Plan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initial Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Core Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-database-connection-configdatabasepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Database Connection (config/database.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-data-fetching-srcdata_fetcherpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Data Fetching (src/data_fetcher.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-feature-extraction-srcfeature_extractorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Feature Extraction (src/feature_extractor.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-clustering-srcclusteringpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Clustering (src/clustering.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-visualization-srcvisualizerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Visualization (src/visualizer.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Processing Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Data Processing Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-1-data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1: Data Ingestion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-2-feature-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2: Feature Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-3-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3: Clustering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-4-visualization-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4: Visualization &amp; Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation-priority-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Foundation (Priority: High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-data-pipeline-priority-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Data Pipeline (Priority: High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-feature-engineering-priority-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Feature Engineering (Priority: High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-clustering-priority-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Clustering (Priority: High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-visualization-priority-medium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Visualization (Priority: Medium)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-integration-testing-priority-medium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: Integration &amp; Testing (Priority: Medium)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-7-polish-documentation-priority-low" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 7: Polish &amp; Documentation (Priority: Low)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Assurance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Assurance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-assessment-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment &amp; Mitigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Assessment &amp; Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline Estimate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timeline Estimate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-2-foundation-data-pipeline-2-3-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1-2 (Foundation &amp; Data Pipeline): 2-3 days
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-4-features-clustering-3-4-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3-4 (Features &amp; Clustering): 3-4 days
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-7-visualization-polish-2-3-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5-7 (Visualization &amp; Polish): 2-3 days
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Complete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment & Usage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment & Usage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/docker-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/database-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebook Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/demo-results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Core Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-database-connection-configdatabasepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Database Connection (config/database.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-data-fetching-srcdata_fetcherpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Data Fetching (src/data_fetcher.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-feature-extraction-srcfeature_extractorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Feature Extraction (src/feature_extractor.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-clustering-srcclusteringpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Clustering (src/clustering.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-visualization-srcvisualizerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Visualization (src/visualizer.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Processing Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Data Processing Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-1-data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1: Data Ingestion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-2-feature-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2: Feature Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-3-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3: Clustering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-4-visualization-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4: Visualization &amp; Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation-priority-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Foundation (Priority: High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-data-pipeline-priority-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Data Pipeline (Priority: High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-feature-engineering-priority-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Feature Engineering (Priority: High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-clustering-priority-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Clustering (Priority: High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-visualization-priority-medium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Visualization (Priority: Medium)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-integration-testing-priority-medium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: Integration &amp; Testing (Priority: Medium)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-7-polish-documentation-priority-low" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 7: Polish &amp; Documentation (Priority: Low)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Assurance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Assurance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-assessment-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment &amp; Mitigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Assessment &amp; Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline Estimate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timeline Estimate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-2-foundation-data-pipeline-2-3-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1-2 (Foundation &amp; Data Pipeline): 2-3 days
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-4-features-clustering-3-4-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3-4 (Features &amp; Clustering): 3-4 days
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-7-visualization-polish-2-3-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5-7 (Visualization &amp; Polish): 2-3 days
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="stock-clustering-project-planning-document">Stock Clustering Project - Planning Document<a class="headerlink" href="#stock-clustering-project-planning-document" title="Permanent link">&para;</a></h1>
+<h2 id="project-overview">Project Overview<a class="headerlink" href="#project-overview" title="Permanent link">&para;</a></h2>
+<p><strong>Objective</strong>: Create a comprehensive stock clustering analysis tool that groups stocks based on their price behavior and characteristics using data from PostgreSQL database and Yahoo Finance API.</p>
+<p><strong>Key Requirements</strong>:
+- Fetch stock symbols from PostgreSQL <code>metrics</code> table (localhost:5432, database: mydatabase, user: myuser, password: mypassword)
+- Download maximum available historical price data from Yahoo Finance for each symbol
+- Extract meaningful features including fluctuation patterns (e.g., 30-70% price ranges)
+- Perform clustering analysis with maximum 50 clusters
+- Generate descriptive labels for clusters
+- Create comprehensive static reports with visualizations
+- Use Python as the primary programming language</p>
+<h2 id="technical-architecture">Technical Architecture<a class="headerlink" href="#technical-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="1-project-structure">1. Project Structure<a class="headerlink" href="#1-project-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Clustering/
+├── README.md                    # Project documentation
+├── requirements.txt             # Python dependencies
+├── setup.py                    # Package installation
+├── main.py                     # Main execution script
+├── .gitignore                  # Git ignore rules
+├── config/
+│   ├── __init__.py
+│   └── database.py             # Database connection management
+├── src/
+│   ├── __init__.py
+│   ├── data_fetcher.py         # Yahoo Finance API integration
+│   ├── feature_extractor.py    # Advanced feature engineering
+│   ├── clustering.py           # Clustering algorithms
+│   └── visualizer.py          # Visualization and reporting
+├── notebooks/
+│   └── exploratory_analysis.ipynb # Interactive analysis
+├── tests/
+│   └── test_data_fetcher.py    # Unit tests
+├── data/raw/                   # Cache directory for stock data
+├── reports/                    # Output for visualizations
+└── results/                    # CSV exports and analysis results
+</code></pre></div>
+<h3 id="2-core-components">2. Core Components<a class="headerlink" href="#2-core-components" title="Permanent link">&para;</a></h3>
+<h4 id="21-database-connection-configdatabasepy">2.1 Database Connection (<code>config/database.py</code>)<a class="headerlink" href="#21-database-connection-configdatabasepy" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Purpose</strong>: Manage PostgreSQL connections</li>
+<li><strong>Features</strong>:</li>
+<li>Connection pooling for performance</li>
+<li>Retry mechanism with exponential backoff</li>
+<li>Connection health checks</li>
+<li>Environment variable support</li>
+<li>Transaction management</li>
+<li><strong>Database Configuration</strong>:</li>
+<li>Host: localhost:5432</li>
+<li>Database: mydatabase</li>
+<li>Username: myuser</li>
+<li>Password: mypassword</li>
+<li>Table: metrics (contains stock symbols)</li>
+</ul>
+<h4 id="22-data-fetching-srcdata_fetcherpy">2.2 Data Fetching (<code>src/data_fetcher.py</code>)<a class="headerlink" href="#22-data-fetching-srcdata_fetcherpy" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Purpose</strong>: Retrieve stock data from Yahoo Finance</li>
+<li><strong>Features</strong>:</li>
+<li>Symbol validation before downloading</li>
+<li>Parallel downloading with ThreadPoolExecutor</li>
+<li>Rate limiting for Yahoo Finance API</li>
+<li>Local caching (SQLite/Parquet format)</li>
+<li>Progress tracking with tqdm</li>
+<li>Error handling and logging</li>
+<li><strong>Methods</strong>:</li>
+<li><code>fetch_symbols_from_db()</code>: Get symbols from metrics table</li>
+<li><code>validate_symbol()</code>: Check if symbol exists on Yahoo Finance</li>
+<li><code>fetch_single_stock_data()</code>: Download data for one symbol</li>
+<li><code>fetch_multiple_stocks_data()</code>: Parallel data fetching</li>
+<li><code>combine_all_data()</code>: Merge all stock data into single DataFrame</li>
+</ul>
+<h4 id="23-feature-extraction-srcfeature_extractorpy">2.3 Feature Extraction (<code>src/feature_extractor.py</code>)<a class="headerlink" href="#23-feature-extraction-srcfeature_extractorpy" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Purpose</strong>: Extract meaningful features for clustering</li>
+<li><strong>Feature Categories</strong>:</li>
+</ul>
+<p><strong>A. Fluctuation Features (Primary Requirement)</strong>
+- <code>count_fluctuation_cycles(min_pct=30, max_pct=70)</code>: Count movements between thresholds
+- <code>avg_fluctuation_period()</code>: Average time between cycles
+- <code>fluctuation_amplitude_stats()</code>: Statistics on cycle sizes
+- <code>price_crossing_frequency()</code>: How often price crosses specific levels</p>
+<p><strong>B. Volatility Features</strong>
+- <code>rolling_volatility([30, 90, 252])</code>: Multiple window volatilities
+- <code>volatility_regime_changes()</code>: Detect volatility shifts
+- <code>volatility_persistence()</code>: How long volatility persists</p>
+<p><strong>C. Return Features</strong>
+- <code>daily_returns()</code>: Basic price changes
+- <code>log_returns()</code>: Logarithmic returns
+- <code>cumulative_returns()</code>: Total return over period
+- <code>return_distribution_stats()</code>: Skewness, kurtosis, etc.</p>
+<p><strong>D. Trend Features</strong>
+- <code>moving_average_ratios()</code>: Price vs different MA periods
+- <code>trend_strength()</code>: How strong trends are
+- <code>momentum_indicators()</code>: Rate of change metrics</p>
+<p><strong>E. Drawdown Features</strong>
+- <code>max_drawdown()</code>: Largest price decline
+- <code>drawdown_duration()</code>: How long drawdowns last
+- <code>recovery_time()</code>: Time to recover from drawdowns</p>
+<p><strong>F. Technical Indicators</strong>
+- RSI, MACD, Bollinger Bands
+- Volume-based indicators
+- Price patterns and formations</p>
+<h4 id="24-clustering-srcclusteringpy">2.4 Clustering (<code>src/clustering.py</code>)<a class="headerlink" href="#24-clustering-srcclusteringpy" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Purpose</strong>: Perform clustering analysis on extracted features</li>
+<li><strong>Algorithms</strong>:</li>
+<li>K-Means clustering (primary)</li>
+<li>Hierarchical clustering (validation)</li>
+<li>Time series clustering with DTW distance</li>
+<li>DBSCAN for outlier detection</li>
+<li><strong>Methods</strong>:</li>
+<li><code>find_optimal_clusters()</code>: Determine best number of clusters</li>
+<li><code>perform_clustering()</code>: Main clustering execution</li>
+<li><code>perform_time_series_clustering()</code>: Time series specific clustering</li>
+<li><code>analyze_clusters()</code>: Cluster characterization</li>
+<li><code>generate_cluster_labels()</code>: Create descriptive labels</li>
+<li><code>evaluate_clustering_quality()</code>: Quality metrics</li>
+</ul>
+<h4 id="25-visualization-srcvisualizerpy">2.5 Visualization (<code>src/visualizer.py</code>)<a class="headerlink" href="#25-visualization-srcvisualizerpy" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Purpose</strong>: Create comprehensive static reports</li>
+<li><strong>Visualization Types</strong>:</li>
+<li>Cluster distribution pie charts</li>
+<li>2D scatter plots (PCA/TSNE reduction)</li>
+<li>Feature importance heatmaps</li>
+<li>Radar plots for cluster profiles</li>
+<li>Sample time series per cluster</li>
+<li>Clustering quality metrics charts</li>
+<li><strong>Output Format</strong>: Static PNG/SVG files embedded in HTML reports</li>
+</ul>
+<h3 id="3-data-processing-pipeline">3. Data Processing Pipeline<a class="headerlink" href="#3-data-processing-pipeline" title="Permanent link">&para;</a></h3>
+<h4 id="stage-1-data-ingestion">Stage 1: Data Ingestion<a class="headerlink" href="#stage-1-data-ingestion" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Connect to PostgreSQL → Extract symbols from metrics table</li>
+<li>Validate symbols (check Yahoo Finance availability)</li>
+<li>Fetch historical data (maximum available per symbol)</li>
+<li>Quality checks and data cleaning</li>
+<li>Store processed data locally (Parquet format for efficiency)</li>
+</ol>
+<h4 id="stage-2-feature-engineering">Stage 2: Feature Engineering<a class="headerlink" href="#stage-2-feature-engineering" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Calculate basic returns and price changes</li>
+<li>Compute rolling statistics (volatility, trends)</li>
+<li>Extract fluctuation patterns and cycles</li>
+<li>Generate technical indicators</li>
+<li>Create composite features and ratios</li>
+<li>Feature selection and dimensionality reduction</li>
+</ol>
+<h4 id="stage-3-clustering">Stage 3: Clustering<a class="headerlink" href="#stage-3-clustering" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Preprocess features (scaling, imputation)</li>
+<li>Determine optimal number of clusters (2-50)</li>
+<li>Apply multiple clustering algorithms</li>
+<li>Validate cluster stability and quality</li>
+<li>Generate descriptive labels</li>
+<li>Create cluster profiles and interpretations</li>
+</ol>
+<h4 id="stage-4-visualization-results">Stage 4: Visualization &amp; Results<a class="headerlink" href="#stage-4-visualization-results" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Create cluster overview visualizations</li>
+<li>Generate cluster profiles and comparisons</li>
+<li>Produce time series visualizations</li>
+<li>Create statistical analysis plots</li>
+<li>Export data for further analysis</li>
+<li>Generate comprehensive HTML report</li>
+</ol>
+<h2 id="implementation-plan">Implementation Plan<a class="headerlink" href="#implementation-plan" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-foundation-priority-high">Phase 1: Foundation (Priority: High)<a class="headerlink" href="#phase-1-foundation-priority-high" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Set up project directory structure</li>
+<li>[ ] Implement database connection module</li>
+<li>[ ] Create basic data fetching functionality</li>
+<li>[ ] Set up logging and error handling</li>
+</ul>
+<h3 id="phase-2-data-pipeline-priority-high">Phase 2: Data Pipeline (Priority: High)<a class="headerlink" href="#phase-2-data-pipeline-priority-high" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Complete Yahoo Finance data fetching</li>
+<li>[ ] Implement caching mechanism</li>
+<li>[ ] Add symbol validation</li>
+<li>[ ] Create data quality checks</li>
+</ul>
+<h3 id="phase-3-feature-engineering-priority-high">Phase 3: Feature Engineering (Priority: High)<a class="headerlink" href="#phase-3-feature-engineering-priority-high" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Implement basic return calculations</li>
+<li>[ ] Add volatility features</li>
+<li>[ ] Create fluctuation analysis (30-70% ranges)</li>
+<li>[ ] Add technical indicators</li>
+<li>[ ] Implement statistical features</li>
+</ul>
+<h3 id="phase-4-clustering-priority-high">Phase 4: Clustering (Priority: High)<a class="headerlink" href="#phase-4-clustering-priority-high" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Implement K-means clustering</li>
+<li>[ ] Add optimal cluster detection</li>
+<li>[ ] Create cluster analysis methods</li>
+<li>[ ] Implement descriptive labeling</li>
+<li>[ ] Add quality evaluation metrics</li>
+</ul>
+<h3 id="phase-5-visualization-priority-medium">Phase 5: Visualization (Priority: Medium)<a class="headerlink" href="#phase-5-visualization-priority-medium" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Create basic visualization framework</li>
+<li>[ ] Implement cluster distribution charts</li>
+<li>[ ] Add scatter plots with PCA reduction</li>
+<li>[ ] Create feature importance heatmaps</li>
+<li>[ ] Add radar plots for cluster profiles</li>
+</ul>
+<h3 id="phase-6-integration-testing-priority-medium">Phase 6: Integration &amp; Testing (Priority: Medium)<a class="headerlink" href="#phase-6-integration-testing-priority-medium" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Create main execution script</li>
+<li>[ ] Add command-line interface</li>
+<li>[ ] Implement comprehensive testing</li>
+<li>[ ] Create demonstration script</li>
+<li>[ ] Add documentation</li>
+</ul>
+<h3 id="phase-7-polish-documentation-priority-low">Phase 7: Polish &amp; Documentation (Priority: Low)<a class="headerlink" href="#phase-7-polish-documentation-priority-low" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Complete README documentation</li>
+<li>[ ] Add usage examples</li>
+<li>[ ] Create interactive notebooks</li>
+<li>[ ] Optimize performance</li>
+<li>[ ] Add error handling edge cases</li>
+</ul>
+<h2 id="technical-specifications">Technical Specifications<a class="headerlink" href="#technical-specifications" title="Permanent link">&para;</a></h2>
+<h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">pandas</span><span class="o">&gt;=</span><span class="mf">2.0.0</span>          <span class="c1"># Data manipulation</span>
+<span class="n">numpy</span><span class="o">&gt;=</span><span class="mf">1.24.0</span>          <span class="c1"># Numerical operations</span>
+<span class="n">yfinance</span><span class="o">&gt;=</span><span class="mf">0.2.0</span>        <span class="c1"># Yahoo Finance API</span>
+<span class="n">sqlalchemy</span><span class="o">&gt;=</span><span class="mf">2.0.0</span>      <span class="c1"># Database connectivity</span>
+<span class="n">psycopg2</span><span class="o">-</span><span class="n">binary</span><span class="o">&gt;=</span><span class="mf">2.9.0</span>  <span class="c1"># PostgreSQL driver</span>
+<span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">&gt;=</span><span class="mf">1.3.0</span>    <span class="c1"># Machine learning</span>
+<span class="n">tslearn</span><span class="o">&gt;=</span><span class="mf">0.6.0</span>         <span class="c1"># Time series clustering</span>
+<span class="n">matplotlib</span><span class="o">&gt;=</span><span class="mf">3.7.0</span>      <span class="c1"># Plotting</span>
+<span class="n">seaborn</span><span class="o">&gt;=</span><span class="mf">0.12.0</span>        <span class="c1"># Statistical visualization</span>
+<span class="n">plotly</span><span class="o">&gt;=</span><span class="mf">5.15.0</span>         <span class="c1"># Interactive plots</span>
+<span class="n">tqdm</span><span class="o">&gt;=</span><span class="mf">4.65.0</span>           <span class="c1"># Progress bars</span>
+<span class="n">scipy</span><span class="o">&gt;=</span><span class="mf">1.10.0</span>          <span class="c1"># Scientific computing</span>
+<span class="n">pyarrow</span><span class="o">&gt;=</span><span class="mf">10.0.0</span>        <span class="c1"># Parquet support</span>
+</code></pre></div>
+<h3 id="performance-considerations">Performance Considerations<a class="headerlink" href="#performance-considerations" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Memory Usage</strong>: Large datasets may require significant RAM for feature extraction</li>
+<li><strong>API Limits</strong>: Yahoo Finance has rate limits - implement delays and caching</li>
+<li><strong>Parallel Processing</strong>: Use ThreadPoolExecutor for data fetching</li>
+<li><strong>Caching Strategy</strong>: Use Parquet format for efficient data storage and retrieval</li>
+</ul>
+<h3 id="error-handling-strategy">Error Handling Strategy<a class="headerlink" href="#error-handling-strategy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Database Errors</strong>: Connection retries, graceful degradation</li>
+<li><strong>API Failures</strong>: Rate limiting, symbol validation, fallback mechanisms</li>
+<li><strong>Data Quality</strong>: Missing value handling, outlier detection</li>
+<li><strong>Clustering Issues</strong>: Insufficient data handling, algorithm fallbacks</li>
+</ul>
+<h2 id="quality-assurance">Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permanent link">&para;</a></h2>
+<h3 id="testing-strategy">Testing Strategy<a class="headerlink" href="#testing-strategy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Unit Tests</strong>: Test individual components (data fetcher, feature extractor, clustering)</li>
+<li><strong>Integration Tests</strong>: Test end-to-end pipeline</li>
+<li><strong>Performance Tests</strong>: Validate with different dataset sizes</li>
+<li><strong>Edge Case Tests</strong>: Handle missing data, API failures, insufficient samples</li>
+</ul>
+<h3 id="validation-criteria">Validation Criteria<a class="headerlink" href="#validation-criteria" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Integrity</strong>: Ensure data quality and completeness</li>
+<li><strong>Clustering Quality</strong>: Validate using multiple metrics (silhouette, Calinski-Harabasz, Davies-Bouldin)</li>
+<li><strong>Label Accuracy</strong>: Ensure descriptive labels reflect cluster characteristics</li>
+<li><strong>Visualization Quality</strong>: Professional, informative charts and reports</li>
+</ul>
+<h2 id="success-metrics">Success Metrics<a class="headerlink" href="#success-metrics" title="Permanent link">&para;</a></h2>
+<h3 id="functional-requirements">Functional Requirements<a class="headerlink" href="#functional-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Successfully connects to PostgreSQL database</li>
+<li>[ ] Fetches stock data from Yahoo Finance API</li>
+<li>[ ] Extracts 50+ meaningful features including fluctuation analysis</li>
+<li>[ ] Performs clustering with up to 50 clusters</li>
+<li>[ ] Generates descriptive cluster labels</li>
+<li>[ ] Creates comprehensive static reports with visualizations</li>
+</ul>
+<h3 id="performance-requirements">Performance Requirements<a class="headerlink" href="#performance-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Handles 100+ stocks efficiently</li>
+<li>[ ] Processes maximum available historical data</li>
+<li>[ ] Generates reports within reasonable time (&lt; 10 minutes for typical dataset)</li>
+<li>[ ] Uses memory efficiently (&lt; 4GB for typical analysis)</li>
+</ul>
+<h3 id="quality-requirements">Quality Requirements<a class="headerlink" href="#quality-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Robust error handling throughout pipeline</li>
+<li>[ ] Comprehensive logging for troubleshooting</li>
+<li>[ ] Professional-quality visualizations</li>
+<li>[ ] Clear, actionable cluster descriptions</li>
+<li>[ ] Complete documentation and usage examples</li>
+</ul>
+<h2 id="risk-assessment-mitigation">Risk Assessment &amp; Mitigation<a class="headerlink" href="#risk-assessment-mitigation" title="Permanent link">&para;</a></h2>
+<h3 id="technical-risks">Technical Risks<a class="headerlink" href="#technical-risks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Yahoo Finance API Changes</strong>: Mitigate with flexible data fetching and caching</li>
+<li><strong>Database Connectivity Issues</strong>: Implement robust connection management and retries</li>
+<li><strong>Memory Limitations</strong>: Use efficient data structures and chunked processing</li>
+<li><strong>Algorithm Performance</strong>: Test multiple algorithms and use optimal defaults</li>
+</ul>
+<h3 id="data-risks">Data Risks<a class="headerlink" href="#data-risks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Missing/Invalid Symbols</strong>: Implement validation and graceful handling</li>
+<li><strong>Incomplete Historical Data</strong>: Use available data and document limitations</li>
+<li><strong>Data Quality Issues</strong>: Implement quality checks and cleaning procedures</li>
+<li><strong>API Rate Limits</strong>: Implement delays, caching, and parallel processing</li>
+</ul>
+<h3 id="business-risks">Business Risks<a class="headerlink" href="#business-risks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Cluster Interpretability</strong>: Use descriptive labeling and feature importance analysis</li>
+<li><strong>Result Actionability</strong>: Provide clear recommendations and usage guidelines</li>
+<li><strong>Scalability</strong>: Design for future expansion and larger datasets</li>
+<li><strong>Maintenance</strong>: Create modular, well-documented code for long-term support</li>
+</ul>
+<h2 id="timeline-estimate">Timeline Estimate<a class="headerlink" href="#timeline-estimate" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-2-foundation-data-pipeline-2-3-days">Phase 1-2 (Foundation &amp; Data Pipeline): 2-3 days<a class="headerlink" href="#phase-1-2-foundation-data-pipeline-2-3-days" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Project setup and database connectivity</li>
+<li>Data fetching implementation and testing</li>
+</ul>
+<h3 id="phase-3-4-features-clustering-3-4-days">Phase 3-4 (Features &amp; Clustering): 3-4 days<a class="headerlink" href="#phase-3-4-features-clustering-3-4-days" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Feature extraction implementation</li>
+<li>Clustering algorithms and analysis</li>
+</ul>
+<h3 id="phase-5-7-visualization-polish-2-3-days">Phase 5-7 (Visualization &amp; Polish): 2-3 days<a class="headerlink" href="#phase-5-7-visualization-polish-2-3-days" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Visualization suite creation</li>
+<li>Integration, testing, and documentation</li>
+</ul>
+<p><strong>Total Estimated Time: 7-10 days</strong></p>
+<h2 id="deliverables">Deliverables<a class="headerlink" href="#deliverables" title="Permanent link">&para;</a></h2>
+<h3 id="code-deliverables">Code Deliverables<a class="headerlink" href="#code-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Complete Python package with all modules</li>
+<li>Command-line interface with comprehensive options</li>
+<li>Unit tests and integration tests</li>
+<li>Demonstration scripts and examples</li>
+</ul>
+<h3 id="documentation-deliverables">Documentation Deliverables<a class="headerlink" href="#documentation-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comprehensive README with usage instructions</li>
+<li>API documentation for all modules</li>
+<li>Methodology explanation and technical details</li>
+<li>Usage examples and best practices guide</li>
+</ul>
+<h3 id="output-deliverables">Output Deliverables<a class="headerlink" href="#output-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cluster assignments (CSV format)</li>
+<li>Feature matrix (CSV format)</li>
+<li>Cluster profiles and statistics (CSV format)</li>
+<li>Visualization suite (PNG/SVG format)</li>
+<li>Comprehensive analysis report (HTML/Markdown format)</li>
+</ul>
+<hr />
+<p><strong>This planning document serves as the blueprint for implementing a comprehensive, production-ready stock clustering analysis system that meets all specified requirements and delivers professional-quality results.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -12,32 +12,49 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required for mkdocs gh-deploy
-      
+          fetch-depth: 0  # useful if you use git-related plugins
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
-        run: |
-          pip install mkdocs mkdocs-material
-      
+        run: pip install mkdocs mkdocs-material
+
+      - name: Build site
+        run: mkdocs build --strict  # --strict helps catch errors early
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3  # or @v4 if available
+        with:
+          path: site/
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        run: mkdocs gh-deploy --force
-      
-      - name: Build site (for PR validation)
-        if: github.ref != 'refs/heads/main'
-        run: mkdocs build
+        id: deployment
+        uses: actions/deploy-pages@v4  # or latest
